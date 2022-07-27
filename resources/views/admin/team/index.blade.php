@@ -66,7 +66,7 @@
                     <td class="text-sm font-weight-normal">{{$team->link_facebook}}</td>
                     <td class="text-sm font-weight-normal text-center">
                         <a href="{{ route('admin.editteam', $team->id) }}" class="btn"><span class="fa fa-pen text-yellow"></span></a>
-                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification4"><span class="fa fa-trash text-red"></span></button>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification4-{{$team->id}}"><span class=" fa fa-trash text-red"></span></button>
                         <button type="button" class="btn" data-toggle="modal" data-target="#modal-detail4-{{$team->id}}"><span class="fa fa-clipboard text-blue"></span></button>
                     </td>
                 </tr>
@@ -79,7 +79,8 @@
 
 <!-- modal  -->
 
-<div class="modal fade" id="modal-notification4" tabindex="-1" role="dialog" aria-labelledby="modal-notification3" aria-hidden="true">
+@foreach ($teams as $team)
+<div class="modal fade" id="modal-notification4-{{$team->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-notification3-{{$team->id}}" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
         <div class="modal-content bg-gradient-danger">
 
@@ -112,6 +113,7 @@
         </div>
     </div>
 </div>
+@endforeach
 
 @foreach ($teams as $team)
 <div class="modal fade" id="modal-detail4-{{$team->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-detail4-{{$team->id}}" aria-hidden="true">

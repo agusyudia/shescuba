@@ -74,7 +74,7 @@
                     <td class="text-sm font-weight-normal">{{$divetrip->status== 0 ? 'Publish':'Deleted'}}</td>
                     <td class="text-sm font-weight-normal text-center">
                         <a href="{{ route('admin.edittrips', $divetrip->id) }}" class="btn"><span class="fa fa-pen text-yellow"></span></a>
-                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification2"><span class="fa fa-trash text-red"></span></button>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification2-{{$divetrip->id}}"><span class="fa fa-trash text-red"></span></button>
                         <button type="button" class="btn" data-toggle="modal" data-target="#modal-detail2-{{$divetrip->id}}"><span class="fa fa-clipboard text-blue"></span></button>
                         <!-- <a href="{{ route('admin.editcourse', $divetrip->id) }}" class="btn"><span class="fa fa-clipboard text-blue"></span></a> -->
                         <a href="{{ route('admin.addimagetrips', $divetrip->id) }}" class="btn"><span class="fa fa-image text-blue"></span></a>
@@ -88,8 +88,9 @@
 
 
 
+@foreach ($divetrips as $divetrip)
 
-<div class="modal fade" id="modal-notification2" tabindex="-1" role="dialog" aria-labelledby="modal-notification2" aria-hidden="true">
+<div class="modal fade" id="modal-notification2-{{$divetrip->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-notification2-{{$divetrip->id}}" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
         <div class="modal-content bg-gradient-danger">
 
@@ -122,6 +123,7 @@
         </div>
     </div>
 </div>
+@endforeach
 
 @foreach ($divetrips as $divetrip)
 <div class="modal fade" id="modal-detail2-{{$divetrip->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-detail2-{{$divetrip->id}}" aria-hidden="true">

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,10 +13,10 @@ class BroadcastServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(UrlGenerator $url)
     {
-        Broadcast::routes();
-
-        require base_path('routes/channels.php');
+        if (env('APP_ENV') !== 'local') {
+            $url->forceSchema('https');
+        }
     }
 }

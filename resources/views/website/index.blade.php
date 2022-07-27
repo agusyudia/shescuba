@@ -245,15 +245,11 @@
     <div class="container">
         <div class="valign-wrap">
             <div class="col-md-6 col-sm-6 valign-middle image-content no-h-padding">
-                <div class="image-title">Our Team Photograph</div>
             </div>
             <!--/.image-content -->
             <div class="col-md-6 col-sm-6 valign-middle text-content">
                 <div class="title">
                     <h3 class="underlined-heading wow animated fadeInUp">More About Us</h3>
-                </div>
-                <div class="text wow animated fadeIn">
-                    <p>We have a best team in the world that have skilled on some adventure thing below.</p>
                 </div>
                 <div class="icon-list-wrap">
                     <div class="row">
@@ -309,17 +305,17 @@
 <!-- Portfolio Collase Begin -->
 <section class="portfolio-collase sec-pad no-b-padding">
     <div class="container-fluid no-h-padding">
-
+        @foreach($trips as $trip)
         <div class="col-md-3 col-sm-6 no-h-padding">
             <div class="portfolio-item">
                 <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-1.jpg')}}" alt="Portfolio Image">
+                    <img src="{{asset('upload/trips/'. $trip->image)}}" alt="Portfolio Image">
                     <figcaption>
                         <div class="valign-wrap fullwidth fullheight">
                             <div class="caption-wrap valign-middle">
-                                <h2>Karimun Jawa</h2>
+                                <h2>{{$trip -> title}}</h2>
                                 <div class="separator"></div>
-                                <p>Java, Indonesia</p>
+                                <p>{{$trip -> address}}</p>
 
                             </div>
                         </div>
@@ -328,139 +324,7 @@
             </div>
             <!--/.portfolio-item -->
         </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-2.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>Hinduism Temple</h2>
-                                <div class="separator"></div>
-                                <p>Bali, Indonesia</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-3.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>Golden Bridge</h2>
-                                <div class="separator"></div>
-                                <p>San Fransisco, USA</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-4.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>Green Mountain</h2>
-                                <div class="separator"></div>
-                                <p>Green Land</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-5.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>The Great Wall</h2>
-                                <div class="separator"></div>
-                                <p>China</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-6.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>The Shire</h2>
-                                <div class="separator"></div>
-                                <p>New Zealand</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-7.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>Colosseum</h2>
-                                <div class="separator"></div>
-                                <p>Rome, Italy</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
-
-        <div class="col-md-3 col-sm-6 no-h-padding">
-            <div class="portfolio-item">
-                <figure class="portfolio-figure">
-                    <img src=" {{asset('assets/images/portfolio-8.jpg')}}" alt="Portfolio Image">
-                    <figcaption>
-                        <div class="valign-wrap fullwidth fullheight">
-                            <div class="caption-wrap valign-middle">
-                                <h2>Pahawang Island</h2>
-                                <div class="separator"></div>
-                                <p>Lampung, Indonesia</p>
-
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <!--/.portfolio-item -->
-        </div>
+        @endforeach
 
     </div>
     <!--/.container-fluid -->
@@ -475,7 +339,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="text-content col-md-9 col-sm-9 col-xs-12 sec-h-pad-b no-h-padding">
                 <h3 class="underlined-heading wow animated fadeInUp">We Are Great Team</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra vulputate tincidunt. Fusce ultricies dui pretium purus vestibulum suscipit. Proin ut turpis a mauris porttitor luctus eu quis velit. Nunc libero dolor, commodo sit amet nunc nec, sollicitudin semper ligula.</p>
+                <p>None of us, including me, ever do great things. But we can all do small things, with great love, and together we can do something wonderful. If you want to lift yourself up, lift up someone else. Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.</p>
             </div>
             <!--/.left-content -->
         </div>

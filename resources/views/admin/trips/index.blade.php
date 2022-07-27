@@ -54,7 +54,7 @@
                     <td class="text-sm font-weight-normal">{{$trip->address}}</td>
                     <td class="text-sm font-weight-normal text-center">
                         <a href="{{ route('admin.trip.edittrips', $trip->id) }}" class="btn"><span class="fa fa-pen text-yellow"></span></a>
-                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification3"><span class="fa fa-trash text-red"></span></button>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-notification3-{{$trip->id}}"><span class=" fa fa-trash text-red"></span></button>
                         <button type="button" class="btn" data-toggle="modal" data-target="#modal-detail3-{{$trip->id}}"><span class="fa fa-clipboard text-blue"></span></button>
                     </td>
                 </tr>
@@ -68,7 +68,8 @@
 
 <!-- modal  -->
 
-<div class="modal fade" id="modal-notification3" tabindex="-1" role="dialog" aria-labelledby="modal-notification3" aria-hidden="true">
+@foreach ($trips as $trip)
+<div class="modal fade" id="modal-notification3-{{$trip->id}}" tabindex=" -1" role="dialog" aria-labelledby="modal-notification3-{{$trip->id}}" aria-hidden=" true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
         <div class="modal-content bg-gradient-danger">
 
@@ -101,6 +102,7 @@
         </div>
     </div>
 </div>
+@endforeach
 
 @foreach ($trips as $trip)
 <div class="modal fade" id="modal-detail3-{{$trip->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-detail3-{{$trip->id}}" aria-hidden="true">
