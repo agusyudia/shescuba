@@ -94,23 +94,13 @@
                             <a href="{{route('index')}}" class="dropdown-toggle">HOME </a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">DIVE COURSE <b class="caret"></b></a>
-                            <ul class="dropdown-menu small-dropdown-menu">
-                                <li class="dropdown-list-wrap">
-                                    <ul class="col-sm-12 no-l-padding dropdown-list titled list-unstyled">
-                                        <li>
-                                            <p><strong>DIVE COURSE</strong></p>
-                                        </li>
-                                        @foreach($divecourses as $divecourse)
-                                        <li><a href="{{route('divecourse',$divecourse->id)}}">{{$divecourse->title}}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a href="{{route('divecourse')}}" class="dropdown-toggle">DIVE COURSE </a>
                         </li>
-                        <!--/.dropdown -->
                         <li class="dropdown">
                             <a href="{{route('divetrip')}}" class="dropdown-toggle">DIVE TRIPS </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{route('galery')}}" class="dropdown-toggle">GALERY </a>
                         </li>
                         <li class="dropdown">
                             <a href="{{route('contact')}}" class="dropdown-toggle">CONTACT US </a>

@@ -95,11 +95,4 @@
 </section>
 <!--Contact Columns End-->
 
-<!--Map Canvas Begin-->
-<section class="map">
-    <iframe width="100%" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1920&amp;height=520&amp;hl=en&amp;q=Jalan%20Palapa%20XIII%20no.3%20Sidakarya%20Denpasar%20Selatan%20Bali%20-%20Indonesia%20Bali+(Shescuba)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='http://mapswebsite.net/fr'>http://mapswebsite.net/fr</a>
-    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=423eb6063d86cd5077ab83d4d89e76eacfba955c'></script>
-</section>
-<!--Map Canvas End-->
-
 @endsection

@@ -21,37 +21,59 @@
 <!--/.banner-small -->
 <!-- Banner Small End -->
 
-<!-- Portfolio Collase Begin -->
-<section class="portfolio-collase" style="margin-top: 20px;">
-    <div class="container no-h-padding">
-        <div class="isotope-wrap masonry-grid">
+<!-- Blog Post Begin -->
+<div class="container">
+    <div class="col-md-12 sec-pad no-h-padding">
+        <div class="masonry-grid isotope-wrap">
+
             @foreach($divetrips as $divetrip)
-            <div class="element-item masonry-item col-md-4 col-sm-6 col-xs-12 with-space  ">
-                <div class="portfolio-item">
-                    <figure class="portfolio-figure">
-                        <img src="{{asset('upload/tumbnail/'.$divetrip->tumbnail)}}" alt="Portfolio Image">
-                        <figcaption>
-                            <div class="valign-wrap fullwidth fullheight">
-                                <div class="caption-wrap valign-middle">
-                                    <h2>{{$divetrip->title}}</h2>
-                                    <a href="{{route('divetripdetail', $divetrip->id)}}" class="def-btn btn-outline portfolio-btn">
-                                        <span class="text-content">
-                                            More Detail <i class="pe-7s-angle-right-circle"></i></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <!--/.portfolio-item -->
+            <div class="col-md-4 masonry-item">
+                <article class="blog-post-alt col-md-12 no-h-padding wow animated fadeIn">
+                    <div class="image-content col-md-12 no-h-padding">
+                        <div class="image">
+                            <img src="{{asset('upload/tumbnail/'.$divetrip->tumbnail)}}" alt="">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 date">IDR {{$divetrip->price}} for {{$divetrip->available}} Dive</div>
+                    </div>
+                    <!--/.image-content -->
+
+                    <div class="text-content col-md-12 no-h-padding margin-responsive">
+                        <div class="title">
+                            <a href="{{route('divetripdetail', $divetrip->id)}}">
+                                <h3>{{$divetrip->title}}</h3>
+                            </a>
+                        </div>
+                        <div class="text">
+                            <p>{{Illuminate\Support\Str::limit($divetrip->description, 150)}}</p>
+                        </div>
+                        <div class="info text-left">
+                            <a href="#" class="link">
+                                <i class="pe-7s-target"></i>
+                                {{$divetrip->kode_level_dive}}
+                            </a>
+                            <a href="#" class="link">
+                                <i class="pe-7s-link"></i>
+                                {{$divetrip->water_entry}}
+                            </a>
+                            <a href="#" class="link">
+                                <i class="pe-7s-drop"></i>
+                                {{$divetrip->water_conditions}}
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.text-content -->
+                </article>
+                <!--/.blog-post -->
             </div>
             @endforeach
-
         </div>
-        <!--/.isotope-wrap -->
+        <!--/.pagination-wrap -->
+        <!-- Pagination Section End -->
     </div>
-    <!--/.container-fluid -->
-</section>
+
+    <!--/.blog-sidebar -->
+</div>
+<!-- Blog Post End -->
 <!--/.portfolio -->
 <!-- Portfolio Collase End -->
 

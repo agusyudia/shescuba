@@ -30,7 +30,7 @@
                                 </h3>
                             </div>
                             <div class="button-wrap animated fadeIn wow" data-wow-delay="2s">
-                                <a href="about-company.html" class="def-btn btn-outline">About Us</a>
+                                <a href="" class="def-btn btn-outline">About Us</a>
                             </div>
                         </div>
                         <!--/.textwrap -->
@@ -70,6 +70,35 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <!--/.content-wrap -->
+            </div>
+            <!--/.container -->
+        </div>
+        <!--/.item -->
+
+        <div class="item parallax-section" style="background-image: url(assets/images/banner3.jpg); background-size:cover;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="content-wrap valign-wrap">
+                    @foreach($teams as $team)
+                    <div class="content valign-bottom col-md-6">
+                        <div class="image-content">
+                            <div class="underlined-heading top animated fadeInLeft wow" data-wow-delay="0.5s">
+                                <img src="{{asset('upload/team/'.$team->image)}}" width="100%" alt="">
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <div class="underlined-heading top animated fadeInLeft wow" data-wow-delay="0.5s">
+                                <h4>{{$team->name}}</h4>
+                            </div>
+                            <div class="banner-description animated fadeIn wow" data-wow-delay="1.5s">
+                                <h3>{{$team->description}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
                 </div>
                 <!--/.content-wrap -->
             </div>
@@ -182,7 +211,7 @@
                     <div class="tab-pane fade in" id="tabfeature4">
                         <div class="col-md-5 no-h-padding">
                             <div class="image">
-                                <img src=" {{asset('assets/images/feature-panel3.jpg')}}" alt="">
+                                <img src=" {{asset('assets/images/feature-panel2.jpg')}}" alt="">
                             </div>
                         </div>
                         <div class="col-md-7">
@@ -239,57 +268,6 @@
 <!--/.feature-panel-wrap -->
 <!-- Feature Panel End -->
 
-<!-- Who We Are Begin -->
-<section class="who-we-are">
-    <div class="image-bg" style="background: url('assets/images/more-about-us.jpg') center no-repeat; background-size: cover;"></div>
-    <div class="container">
-        <div class="valign-wrap">
-            <div class="col-md-6 col-sm-6 valign-middle image-content no-h-padding">
-            </div>
-            <!--/.image-content -->
-            <div class="col-md-6 col-sm-6 valign-middle text-content">
-                <div class="title">
-                    <h3 class="underlined-heading wow animated fadeInUp">More About Us</h3>
-                </div>
-                <div class="icon-list-wrap">
-                    <div class="row">
-                        <div class="icon-list col-md-6 col-sm-6">
-                            <div class="icon text-center"><i class="pe-7s-anchor"></i></div>
-                            <div class="icon-text">
-                                <div class="top-text">Our Team Is</div>
-                                <div class="bottom-text">Best Divers</div>
-                            </div>
-                        </div>
-                        <div class="icon-list col-md-6 col-sm-6">
-                            <div class="icon text-center"><i class="pe-7s-compass"></i></div>
-                            <div class="icon-text">
-                                <div class="top-text">Our Team Is</div>
-                                <div class="bottom-text">Best Hikers</div>
-                            </div>
-                        </div>
-                        <div class="icon-list col-md-6 col-sm-6">
-                            <div class="icon text-center"><i class="pe-7s-plane"></i></div>
-                            <div class="icon-text">
-                                <div class="top-text">We Are</div>
-                                <div class="bottom-text">Great Traveler</div>
-                            </div>
-                        </div>
-                        <div class="icon-list col-md-6 col-sm-6">
-                            <div class="icon text-center"><i class="pe-7s-way"></i></div>
-                            <div class="icon-text">
-                                <div class="top-text">Our Team Is</div>
-                                <div class="bottom-text">Best Explorer</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/.text-content -->
-        </div>
-    </div>
-</section>
-<!--/.who-we-are -->
-<!-- Who We Are End -->
 
 <!-- Title Paragraph Begin -->
 <section class="title-paragraph sec-pad-t">
@@ -332,69 +310,5 @@
 <!--/.portfolio -->
 <!-- Portfolio Collase End -->
 
-
-<!-- Team Slider Begin -->
-<section class="team-slider-wrap sec-pad">
-    <div class="container">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="text-content col-md-9 col-sm-9 col-xs-12 sec-h-pad-b no-h-padding">
-                <h3 class="underlined-heading wow animated fadeInUp">We Are Great Team</h3>
-                <p>None of us, including me, ever do great things. But we can all do small things, with great love, and together we can do something wonderful. If you want to lift yourself up, lift up someone else. Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.</p>
-            </div>
-            <!--/.left-content -->
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="slider team-slider-nav">
-                @foreach($teams as $team)
-                <div class="team-photo">
-                    <img src="{{asset('upload/team/'.$team->image)}}" alt="">
-                    <div class="overlay">
-                        <div class="valign-wrap content">
-                            <div class="valign-middle">
-                                <div class="name">
-                                    <h3>{{$team->name}}</h3>
-                                </div>
-                                <div class="position">{{$team->position}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/.team-photo -->
-                @endforeach
-            </div>
-            <!--/.team-slider-nav -->
-            <div class="slider team-slider">
-                @foreach($teams as $team)
-                <div class="slider-content">
-                    <div class="col-md-6 no-h-padding photo-section">
-                        <img src=" {{asset('upload/team/'.$team->image)}}" alt="">
-                    </div>
-                    <div class="col-md-6 text-section no-h-padding">
-                        <div class="title">
-                            <h3>{{$team->name}}</h3>
-                        </div>
-                        <div class="subtitle">
-                            <h4>{{$team->position}}</h4>
-                        </div>
-                        <div class="description">
-                            <p>{{$team->description}}</p>
-                        </div>
-                        <div class="socmed">
-                            <a href="{{$team->link_twitter}}"><i class="fa fa-twitter"></i></a>
-                            <a href="{{$team->link_instagram}}"><i class="fa fa-instagram"></i></a>
-                            <a href="{{$team->link_facebook}}"><i class="fa fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!--/.team-slider -->
-                @endforeach
-            </div>
-            <!--/.team-slider -->
-        </div>
-    </div>
-    <!--/.container-->
-</section>
-<!--/.team-slider-wrap-->
-<!-- Team Slider End -->
 
 @endsection

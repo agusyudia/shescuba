@@ -199,6 +199,10 @@ section {
     background: #fff;
 }
 
+.bg-blue {
+    background: rgba(0, 153, 238, 1) !important;
+}
+
 .second-bg {
     background: #f7f8fa !important;
 }
@@ -640,7 +644,7 @@ label {
 }
 
 .navbar .navbar-brand img {
-    width: 50px;
+    width: 70px;
 }
 
 .navbar .navbar-nav {
@@ -661,9 +665,9 @@ label {
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 2px;
-    padding: 25px 20px;
+    padding: 30px 20px;
     color: #676767;
 }
 
@@ -2347,7 +2351,8 @@ label {
 /* Blog Post Style */
 .blog-post,
 .blog-post-alt {
-    padding-bottom: 60px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .blog-post .image-content .image img,
@@ -5052,7 +5057,7 @@ footer .copyright .content-wrap .content .right-content .social-media a i {
 
 @media (min-width: 1025px) and (max-width: 1999px) {
     .navbar .navbar-nav li a {
-        padding: 25px 10px;
+        padding: 40px 10px;
     }
 }
 

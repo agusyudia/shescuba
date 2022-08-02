@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DiveCourseController;
 use App\Http\Controllers\DiveTripsController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TripsController;
@@ -22,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WebsiteController::class, 'index'])->name('index');
-Route::get('/divecourse/{id}', [WebsiteController::class, 'divecourse'])->name('divecourse');
+Route::get('/divecourse', [WebsiteController::class, 'divecourse'])->name('divecourse');
+Route::get('/divecoursedetail/{id}', [WebsiteController::class, 'divecoursedetail'])->name('divecoursedetail');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::get('/divetrip', [WebsiteController::class, 'divetrip'])->name('divetrip');
+Route::get('/galery', [WebsiteController::class, 'galery'])->name('galery');
 Route::get('/divetripdetail/{id}', [WebsiteController::class, 'divetripdetail'])->name('divetripdetail');
 
 Auth::routes();
@@ -68,3 +71,9 @@ Route::post('/admin/team/create', [TeamController::class, 'post'])->name('admin.
 Route::get('/admin/team/edit/{id}', [TeamController::class, 'edit'])->name('admin.editteam');
 Route::put('/admin/team/edit/{id}', [TeamController::class, 'update'])->name('admin.editteam.put');
 Route::delete('/admin/team/delete/{id}', [TeamController::class, 'delete'])->name('admin.deleteteam');
+
+// halaman Galery
+Route::get('/admin/galery', [GaleryController::class, 'index'])->name('admin.galery');
+Route::get('/admin/galery/create', [GaleryController::class, 'create'])->name('admin.addgalery');
+Route::post('/admin/galery/create', [GaleryController::class, 'post'])->name('admin.addgalery.post');
+Route::delete('/admin/galery/delete/{id}', [GaleryController::class, 'delete'])->name('admin.deletegalery');

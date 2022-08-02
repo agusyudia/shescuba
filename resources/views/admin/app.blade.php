@@ -65,6 +65,12 @@
                                 <span class="nav-link-text">Team</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.galery')}}">
+                                <i class="ni ni-books text-red"></i>
+                                <span class="nav-link-text">Galery</span>
+                            </a>
+                        </li>
                         <hr>
                         <li class="nav-item">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
